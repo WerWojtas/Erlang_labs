@@ -27,10 +27,10 @@ duplicateElements([H|T]) -> [H ++ H | duplicateElements(T)].
 
 sumFloats([]) -> 0;
 sumFloats([H|T]) when is_float(H) -> H+ sumFloats(T);
-sumFloats([H|T]) -> sumFloats(T).
+sumFloats([_|T]) -> sumFloats(T).
 
 sumFloatsTail([], Sum) -> Sum;
 sumFloatsTail([H|T], Sum) when is_float(H) -> sumFloatsTail(T,H+Sum);
-sumFloatsTail([H|T], Sum) -> sumFloatsTail(T,Sum).
+sumFloatsTail([_|T], Sum) -> sumFloatsTail(T,Sum).
 
 
